@@ -1,0 +1,13 @@
+[Unit]
+Description="forum-app prod started after boot"
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/forum-app/
+EnvironmentFile=/opt/forum-app/.env
+ExecStart=/bin/bash /opt/forum-app/start.sh
+TimeoutStartSec=0
+
+[Install]
+Wantedby=default.target
